@@ -95,17 +95,17 @@ class BrawlStarsGame extends FlameGame {
 
   @override
   void onDragStart(DragStartEvent event) {
-    player.moveTowards(event.localPosition);
+    player.moveTowards(event.localPosition.toVector2());
   }
 
   @override
   void onDragUpdate(DragUpdateEvent event) {
-    player.moveTowards(event.localPosition);
+    player.moveTowards(event.localPosition.toVector2());
   }
 
   @override
   void onTapDown(TapDownEvent event) {
-    player.shoot(event.localPosition);
+    player.shoot(event.localPosition.toVector2());
   }
 
   @override
