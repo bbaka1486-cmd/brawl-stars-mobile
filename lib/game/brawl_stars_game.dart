@@ -2,6 +2,7 @@ import 'package:flame/game.dart';
 import 'package:flame/events.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:vector_math/vector_math.dart';
 import '../components/player.dart';
 import '../components/enemy.dart';
 import '../components/bullet.dart';
@@ -95,17 +96,20 @@ class BrawlStarsGame extends FlameGame {
 
   @override
   void onDragStart(DragStartEvent event) {
-    player.moveTowards(event.localPosition.toVector2());
+    final position = event.localPosition;
+    player.moveTowards(position);
   }
 
   @override
   void onDragUpdate(DragUpdateEvent event) {
-    player.moveTowards(event.localPosition.toVector2());
+    final position = event.localPosition;
+    player.moveTowards(position);
   }
 
   @override
   void onTapDown(TapDownEvent event) {
-    player.shoot(event.localPosition.toVector2());
+    final position = event.localPosition;
+    player.shoot(position);
   }
 
   @override
